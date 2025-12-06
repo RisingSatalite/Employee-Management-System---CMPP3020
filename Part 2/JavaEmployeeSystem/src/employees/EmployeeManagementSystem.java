@@ -24,6 +24,8 @@ public class EmployeeManagementSystem {
 				while(true) {
 					System.out.println("Add new employee, type na to cancel");
 					String type = input.nextLine();
+					
+					//Need to add loops to get all needed information
 					if(type.equalsIgnoreCase("fulltime")){
 						System.out.println("Addeding full time employee");
 						fullTimeEmployee newEmployee = new fullTimeEmployee();
@@ -33,7 +35,7 @@ public class EmployeeManagementSystem {
 					
 					if(type.equalsIgnoreCase("parttime")){
 						System.out.println("Addeding full time employee");
-						fullTimeEmployee newEmployee = new fullTimeEmployee();
+						partTimeEmployee newEmployee = new partTimeEmployee();
 						EmployeeList.add(newEmployee);
 						break;
 					}

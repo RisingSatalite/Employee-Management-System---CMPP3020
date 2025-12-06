@@ -3,7 +3,7 @@ package employees;
 public class fullTimeEmployee extends EmployeeInfo {
 	int VacationsDays;
 	String Benefits;
-	int AnnualSalary;
+	float AnnualSalary;
 	
 	public void AddEmployeeInfo() {
 		
