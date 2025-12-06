@@ -6,7 +6,12 @@ import java.util.Scanner;
 
 public class EmployeeManagementSystem {
 	static List<EmployeeInfo> EmployeeList = new ArrayList<>();
+	static List<department> DepartmentList = new ArrayList<>();
+	static List<Position> PositionList= new ArrayList<>();
+	
+	//For reading user inputs
 	static Scanner input = new Scanner(System.in);
+	
 	// TODO Auto-generated method stub
 	public static void main(String[] args) {
 		System.out.println("Loading employee managemnt system");
