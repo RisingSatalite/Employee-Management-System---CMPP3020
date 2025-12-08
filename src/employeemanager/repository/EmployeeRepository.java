@@ -38,7 +38,8 @@ public class EmployeeRepository {
 
                 int id = Integer.parseInt(parts[0].trim());
                 String fullName = parts[1].trim();
-                double pay = Double.parseDouble(parts[2].trim());
+
+                double pay = Double.parseDouble(parts[4].trim());
 
                 String[] nameParts = fullName.split(" ");
                 String first = nameParts[0];
