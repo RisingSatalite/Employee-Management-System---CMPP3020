@@ -1,7 +1,8 @@
 package employeemanager.model;
 
-import employeemanager.exceptions.InvalidDataException;
 import java.time.LocalDate;
+
+import employeemanager.exceptions.InvalidDataException;
 
 public class FullTimeEmployee extends Employee{
 
