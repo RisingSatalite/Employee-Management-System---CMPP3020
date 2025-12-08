@@ -1,5 +1,97 @@
 package employeemanager.repository;
 
+import employeemanager.model.Employee;
+import employeemanager.exceptions.*;
+
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.util.ArrayList;
+import java.util.List;
+import java.time.LocalDate;
+
 public class EmployeeRepository {
 
+	public List<Employee> loadEmployees(String filePath)
+            throws FileStorageException, InvalidDataException {
+
+        Path path = Path.of(filePath);
+
+        if (!Files.exists(path)) {
+            throw new FileStorageException("File does not exist: " + filePath);
+        }
+
+        List<Employee> employees = new ArrayList<>();
+
+        try {
+            List<String> lines = Files.readAllLines(path);
+
+            for (String line : lines) {
+                if (line.isBlank()) continue;
+
+                String[] parts = line.split(",");
+
+                if (parts.length < 3) {
+                    System.err.println("Skipping malformed line: " + line);
+                    continue;
+                }
+
+                int id = Integer.parseInt(parts[0].trim());
+                String fullName = parts[1].trim();
+
+                double pay = Double.parseDouble(parts[4].trim());
+
+                String[] nameParts = fullName.split(" ");
+                String first = nameParts[0];
+                String last = (nameParts.length > 1) ? nameParts[1] : "";
+
+                Employee employee = new Employee(
+                        id,
+                        first,
+                        last,
+                        LocalDate.now(),              
+                        LocalDate.of(2000, 1, 1)      
+                ) {
+                    private final double loadedPay = pay;
+
+                    @Override
+                    public double getPay() {
+                        return loadedPay;
+                    }
+                };
+
+                employees.add(employee);
+            }
+
+            System.out.println("Successfully loaded " + employees.size()
+                    + " employees from " + filePath);
+
+            return employees;
+
+        } catch (IOException e) {
+            throw new FileStorageException("Error reading file " + filePath, e);
+        }
+    }
+	
+    public void saveEmployees(String filePath, List<Employee> employees)
+            throws FileStorageException {
+
+        Path path = Path.of(filePath);
+        List<String> lines = new ArrayList<>();
+
+        for (Employee employee : employees) {
+            lines.add(employee.getEmployeeId() + 
+            		"," + employee.getFullName() + 
+            		"," + employee.getPosition() +
+            		"," + employee.getDepartment() +
+            		"," + employee.getPay());
+        }
+
+        try {
+            Files.write(path, lines);
+            System.out.println("Saved " + employees.size() + " employees to " + filePath);
+        } catch (IOException e) {
+            throw new FileStorageException("Error writing file " + filePath, e);
+        }
+    }
 }
