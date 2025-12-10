@@ -21,8 +21,12 @@ public class EmployeeApp {
         Scanner scanner = new Scanner(System.in);
         EmployeeRepository repository = new EmployeeRepository();
         List<Employee> employees = new ArrayList<>();
+        List<Department> departments = new ArrayList<>();
+        List<Position> positions = new ArrayList<>();
 
         preloadBaseEmployees(employees);
+        preloadBaseDepartments(departments);
+        preloadBasePositions(positions);
 
         boolean running = true;
 
@@ -435,6 +439,28 @@ public class EmployeeApp {
         } catch (InvalidDataException error) {
             System.err.println("Error creating base employees: " + error.getMessage());
         }
+    }
+    
+    private static void preloadBaseDepartments(List<Department> departments) {
+    	Department department1 = new Department(1,"Payroll");
+    	Department department2 = new Department(2,"IT");
+    	Department department3 = new Department(3,"Staff");
+    	Department department4 = new Department(4,"Administration");
+    	departments.add(department1);
+    	departments.add(department2);
+    	departments.add(department3);
+    	departments.add(department4);
+    }
+    
+    private static void preloadBasePositions(List<Position> positions) {
+    	Position position1 = new Position(1,"Accountant");
+    	Position position2 = new Position(2,"IT Staff");
+    	Position position3 = new Position(3,"Teacher");
+    	Position position4 = new Position(4,"Administrator");
+    	positions.add(position1);
+    	positions.add(position2);
+    	positions.add(position3);
+    	positions.add(position4);
     }
     
     private static void viewEmployeeManagerAssignments(List<Employee> employees) {
