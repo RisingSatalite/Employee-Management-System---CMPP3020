@@ -52,5 +52,38 @@ namespace EmployeeManager.repository
                 throw new FileStorageException($"Error reading file {filePath}", ex);
             }
         }
+
+        public void SaveEmployees(string filePath, List<Employee> employees)
+        {
+            var lines = new List<string>();
+
+            foreach (var employee in employees)
+            {
+                lines.add($"{employee.EmployeeId}, {employee.FullName}, {employee.Position}, {employee.Department}, {employee.Pay()}");
+            }
+
+            try
+            {
+                File.WriteAllLines(filePath, lines);
+                Console.WriteLine($"Saved {employees.Count} employees to {filePath}");
+            }
+
+            catch (IOException ex)
+            {
+                throw new FileStorageException($"Error writing file {filePath}", ex);
+            }      
+        }
+
+        private class AnonymousEmployee : EmployeeManager
+        {
+            private readonly double loadedPay;
+
+            public AnonymousEmployee(int employeeId, string firstName, string lastName, double loadedPay) : base(employeeId, firstName, lastName, DateTime.Now, new DateTime(2000, 1, 1))
+            {
+                this.loadedPay = loadedPay;
+            }
+
+            public override double Pay() => loadedPay;
+        }
     }
 }
