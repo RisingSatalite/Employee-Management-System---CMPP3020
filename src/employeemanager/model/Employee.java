@@ -93,6 +93,13 @@ public abstract class Employee {
     public Department getDepartment() {
         return department;
     }
+    
+    public String getDepartmentName() {
+    	if(this.department == null) {
+    		return "";
+    	}
+        return this.department.getName();
+    }
 
     public void setDepartment(Department department) {
         this.department = department;
@@ -100,6 +107,13 @@ public abstract class Employee {
 
     public Position getPosition() {
         return position;
+    }
+    
+    public String getPositionName() {
+        if(this.position == null) {
+    		return "";
+    	}
+        return this.position.getTitle();
     }
 
     public void setPosition(Position position) {

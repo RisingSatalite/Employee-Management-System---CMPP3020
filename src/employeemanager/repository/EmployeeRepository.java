@@ -87,8 +87,8 @@ public class EmployeeRepository {
         	
             lines.add(employee.getEmployeeId() + 
             		"," + employee.getFullName() + 
-            		"," + employee.getPosition() +
-            		"," + employee.getDepartment() +
+            		"," + employee.getPositionName() +
+            		"," + employee.getDepartmentName() +
             		"," + employee.getPay());
         }
 
