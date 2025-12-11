@@ -10,6 +10,23 @@ public class Manager extends FullTimeEmployee {
 
     private String managementPosition;
     private final List<Employee> team = new ArrayList<>();
+    
+    public Manager(
+    		int employeeId,
+            String firstName,
+            String lastName,
+            LocalDate startDate,
+            LocalDate dateOfBirth,
+            double annualSalary,
+            int vacationDays,
+            String benefits,
+            String managementPosition,
+            Position position,
+            Department department
+            ) throws InvalidDataException {
+    	super(employeeId, firstName, lastName, startDate, dateOfBirth, annualSalary, vacationDays, benefits, position, department);
+ 		this.managementPosition = managementPosition;
+    }
 
     public Manager(int employeeId,
                    String firstName,

@@ -30,6 +30,8 @@ public class EmployeeRepository {
                 if (line.isBlank()) continue;
 
                 String[] parts = line.split(",");
+                
+                //Need to determine the type of employ and default to the standard employee incase of any issues
 
                 if (parts.length < 3) {
                     System.err.println("Skipping malformed line: " + line);
@@ -80,10 +82,13 @@ public class EmployeeRepository {
         List<String> lines = new ArrayList<>();
 
         for (Employee employee : employees) {
+        	
+        	//Determine the type of employee. Then use there specific data to save to file.
+        	
             lines.add(employee.getEmployeeId() + 
             		"," + employee.getFullName() + 
-            		"," + employee.getPosition() +
-            		"," + employee.getDepartment() +
+            		"," + employee.getPositionName() +
+            		"," + employee.getDepartmentName() +
             		"," + employee.getPay());
         }
 

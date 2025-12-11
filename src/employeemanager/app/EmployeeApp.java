@@ -21,8 +21,12 @@ public class EmployeeApp {
         Scanner scanner = new Scanner(System.in);
         EmployeeRepository repository = new EmployeeRepository();
         List<Employee> employees = new ArrayList<>();
+        List<Department> departments = new ArrayList<>();
+        List<Position> positions = new ArrayList<>();
 
-        preloadBaseEmployees(employees);
+        preloadBaseDepartments(departments);
+        preloadBasePositions(positions);
+        preloadBaseEmployees(employees, positions, departments);
 
         boolean running = true;
 
@@ -32,7 +36,7 @@ public class EmployeeApp {
 
             try {
                 switch (choice) {
-                    case "1" -> addEmployeeMenu(scanner, employees);
+                    case "1" -> addEmployeeMenu(scanner, employees, positions, departments);
                     case "2" -> viewEmployees(employees);
                     case "3" -> deleteEmployeeMenu(scanner, employees);
                     case "4" -> saveEmployeesToFile(repository, employees);
@@ -134,7 +138,7 @@ public class EmployeeApp {
 
     // ===== Adding employees =====
 
-    private static void addEmployeeMenu(Scanner scanner, List<Employee> employees)
+    private static void addEmployeeMenu(Scanner scanner, List<Employee> employees, List<Position> positions, List<Department> departments)
             throws InvalidDataException {
 
         System.out.println("\nAdd Employee");
@@ -155,6 +159,29 @@ public class EmployeeApp {
         // Dummy dates for prototype
         LocalDate startDate = LocalDate.now();
         LocalDate dob = LocalDate.of(2000, 1, 1);
+        
+        
+        System.out.print("Position");
+        for (int i = 0; i < positions.size(); i++) {
+            System.out.println("Enter " + i + " for " + positions.get(i).getTitle());
+        }
+        System.out.print("Enter the number to select, 0 for no position at this time");
+        int number = Integer.parseInt(scanner.nextLine().trim());
+        Position selectedPosition = null;
+        if (number >= 1 && number <= positions.size()) {
+        	selectedPosition = positions.get(number-1);
+        }
+
+        System.out.print("Department");
+        for (int i = 0; i < departments.size(); i++) {
+            System.out.println("Enter " + i + " for " + departments.get(i).getName());
+        }
+        System.out.print("Enter the number to select, 0 for no position at this time");
+        number = Integer.parseInt(scanner.nextLine().trim());
+        Department selectedDepartment = null;
+        if (number >= 1 && number <= positions.size()) {
+        	selectedDepartment = departments.get(number-1);
+        }
 
         Employee newEmployee = null;
 
@@ -180,21 +207,21 @@ public class EmployeeApp {
             case "2":
                 newEmployee = new Manager(
                         id, first, last, startDate, dob,
-                        salary, vacation, benefits, "Manager"
+                        salary, vacation, benefits, "Manager", selectedPosition, selectedDepartment
                 );
                 break;
 
             case "3":
                 newEmployee = new Instructor(
                         id, first, last, startDate, dob,
-                        salary, vacation, benefits
+                        salary, vacation, benefits, selectedPosition, selectedDepartment
                 );
                 break;
 
             case "4":
                 newEmployee = new PayrollEmployee(
                         id, first, last, startDate, dob,
-                        salary, vacation, benefits
+                        salary, vacation, benefits, selectedPosition, selectedDepartment
                 );
                 break;
 
@@ -202,7 +229,7 @@ public class EmployeeApp {
             default:
                 newEmployee = new FullTimeEmployee(
                         id, first, last, startDate, dob,
-                        salary, vacation, benefits
+                        salary, vacation, benefits, selectedPosition, selectedDepartment
                 );
                 break;
         }
@@ -226,7 +253,7 @@ public class EmployeeApp {
 
             PartTimeEmployee parttime = new PartTimeEmployee(
                     id, first, last, startDate, dob,
-                    hourly, hours, contractEnd
+                    hourly, hours, contractEnd, selectedPosition, selectedDepartment
             );
 
             System.out.print("Is this part-time employee an Instructor? (y/n): ");
@@ -383,13 +410,14 @@ public class EmployeeApp {
 
     // ===== Preload base employees =====
 
-    private static void preloadBaseEmployees(List<Employee> employees) {
+    private static void preloadBaseEmployees(List<Employee> employees, List<Position> positions, List<Department> department) {
         try {
             FullTimeEmployee alice = new FullTimeEmployee(
                     1001, "Alice", "Smith",
                     LocalDate.of(2022, 1, 10),
                     LocalDate.of(1995, 3, 15),
-                    80000, 15, "Health Insurance, Dental"
+                    80000, 15, "Health Insurance, Dental",
+                    positions.get(2), department.get(2)
             );
             employees.add(alice);
 
@@ -398,7 +426,8 @@ public class EmployeeApp {
                     LocalDate.of(2023, 5, 1),
                     LocalDate.of(2000, 7, 20),
                     25.0, 20,
-                    LocalDate.of(2026, 5, 1)
+                    LocalDate.of(2026, 5, 1),
+                    positions.get(2), department.get(2)
             );
             employees.add(bob);
 
@@ -406,7 +435,8 @@ public class EmployeeApp {
                     1003, "Carol", "Brown",
                     LocalDate.of(2020, 9, 1),
                     LocalDate.of(1990, 1, 5),
-                    95000, 20, "Health Insurance, Dental, Retirement Plan", "IT Manager"
+                    95000, 20, "Health Insurance, Dental, Retirement Plan", 
+                    "IT Manager", positions.get(4), department.get(3)
             );
             employees.add(carol);
 
@@ -414,7 +444,8 @@ public class EmployeeApp {
                     1004, "Dan", "Green",
                     LocalDate.of(2019, 9, 1),
                     LocalDate.of(1988, 10, 10),
-                    90000, 20, "Health Insurance, Dental"
+                    90000, 20, "Health Insurance, Dental",
+                    positions.get(2), department.get(2)
             );
             employees.add(dan);
 
@@ -422,7 +453,8 @@ public class EmployeeApp {
                     1005, "Eve", "White",
                     LocalDate.of(2021, 3, 1),
                     LocalDate.of(1992, 11, 11),
-                    85000, 15, "Health Insurance, Dental"
+                    85000, 15, "Health Insurance, Dental",
+                    positions.get(1), department.get(1)
             );
             employees.add(eve);
 
@@ -435,6 +467,30 @@ public class EmployeeApp {
         } catch (InvalidDataException error) {
             System.err.println("Error creating base employees: " + error.getMessage());
         }
+    }
+    
+    private static void preloadBaseDepartments(List<Department> departments) {
+    	Department department1 = new Department(1,"Payroll");
+    	Department department2 = new Department(2,"IT");
+    	Department department3 = new Department(3,"Staff");
+    	Department department4 = new Department(4,"Administration");
+    	departments.add(department1);
+    	departments.add(department2);
+    	departments.add(department3);
+    	departments.add(department4);
+    }
+    
+    private static void preloadBasePositions(List<Position> positions) {
+    	Position position1 = new Position(1,"Accountant");
+    	Position position2 = new Position(2,"IT Staff");
+    	Position position3 = new Position(3,"Teacher");
+    	Position position4 = new Position(4,"Administrator");
+    	Position position5 = new Position(5,"Manager");
+    	positions.add(position1);
+    	positions.add(position2);
+    	positions.add(position3);
+    	positions.add(position4);
+    	positions.add(position5);
     }
     
     private static void viewEmployeeManagerAssignments(List<Employee> employees) {

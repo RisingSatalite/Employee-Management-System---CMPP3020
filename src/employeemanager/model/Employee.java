@@ -36,6 +36,32 @@ public abstract class Employee {
         this.dateOfBirth = dateOfBirth;
 	}
 	
+	protected Employee(
+			int employeeId,
+			String firstName,
+			String lastName,
+			LocalDate startDate,
+			LocalDate dateOfBirth,
+			Position position,
+			Department department
+			)
+	throws InvalidDataException {
+		if (employeeId <= 0) {
+			throw new InvalidDataException("Employee ID must be positive.");
+		}
+		if (firstName == null || firstName.isBlank()) {
+			throw new InvalidDataException("First name is required");
+		}
+		
+		this.employeeId = employeeId;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.startDate = startDate;
+        this.dateOfBirth = dateOfBirth;
+        this.position = position;
+        this.department = department;
+	}
+	
 	public int getEmployeeId() {
         return employeeId;
     }
@@ -67,6 +93,13 @@ public abstract class Employee {
     public Department getDepartment() {
         return department;
     }
+    
+    public String getDepartmentName() {
+    	if(this.department == null) {
+    		return "";
+    	}
+        return this.department.getName();
+    }
 
     public void setDepartment(Department department) {
         this.department = department;
@@ -74,6 +107,13 @@ public abstract class Employee {
 
     public Position getPosition() {
         return position;
+    }
+    
+    public String getPositionName() {
+        if(this.position == null) {
+    		return "";
+    	}
+        return this.position.getTitle();
     }
 
     public void setPosition(Position position) {

@@ -10,6 +10,24 @@ public class FullTimeEmployee extends Employee{
 	private int vacationDays;
 	private String benefits;
 	
+	public FullTimeEmployee(
+			int employeeId,
+            String firstName,
+            String lastName,
+            LocalDate startDate,
+            LocalDate dateOfBirth,
+            double annualSalary,
+            int vacationDays,
+            String benefits,
+            Position position,
+            Department department
+            ) throws InvalidDataException {
+		super(employeeId, firstName, lastName, startDate, dateOfBirth, position, department);
+		this.annualSalary = annualSalary;
+		this.vacationDays = vacationDays;
+		this.benefits = benefits;
+	}
+	
 	public FullTimeEmployee(int employeeId,
             String firstName,
             String lastName,
@@ -23,6 +41,7 @@ public class FullTimeEmployee extends Employee{
 		this.vacationDays = vacationDays;
 		this.benefits = benefits;
 	}
+	
 	@Override
     public double getPay() {
         return annualSalary / 12.0;
