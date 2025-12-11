@@ -6,6 +6,21 @@ import java.time.LocalDate;
 
 public class PayrollEmployee extends FullTimeEmployee {
 
+	public PayrollEmployee(
+			int employeeId,
+            String firstName,
+            String lastName,
+            LocalDate startDate,
+            LocalDate dateOfBirth,
+            double annualSalary,
+            int vacationDays,
+            String benefits,
+            Position position,
+            Department department
+            ) throws InvalidDataException {
+			super(employeeId, firstName, lastName, startDate, dateOfBirth, annualSalary, vacationDays, benefits, position, department);
+	}
+	
     public PayrollEmployee(int employeeId,
                            String firstName,
                            String lastName,
