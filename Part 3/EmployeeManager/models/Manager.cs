@@ -8,14 +8,14 @@ namespace EmployeeManager.Models
         public string ManagementPosition { get; set; }
         private readonly List<Employee> _team = new List<Employee>();
 
-        public Manager(int employeeId, string firstName, string lastName, DateTime startDate, DateTime dateOfBirth, double annualSalary, int vacationDays, string benefits, string managementPosition) : base(employeeId, firstName, lastName, startDate, dateOfBirth, annualSalary, vacationDays, benefits, managementPosition)
+        public Manager(int employeeId, string firstName, string lastName, DateTime startDate, DateTime dateOfBirth, double annualSalary, int vacationDays, string benefits, string managementPosition) : base(employeeId, firstName, lastName, startDate, dateOfBirth, annualSalary, vacationDays, benefits)
         {
             ManagementPosition = managementPosition;
         }
 
         public int TeamSize => _team.Count;
 
-        public void AddTeamMember(EmployeeManager employee)
+        public void AddTeamMember(Employee employee)
         {
             if (!_team.Contains(employee))
             {
@@ -24,14 +24,14 @@ namespace EmployeeManager.Models
             }
         }
 
-        public void RemoveTeamMember (EmployeeManager employee)
+        public void RemoveTeamMember (Employee employee)
         {
             _team.Remove(employee);
             if (employee.Manager == this)
                 employee.Manager = null;
         }
 
-        public IReadOnlyLost<Employee> Team => _team.AsReadOnly();
+        public IReadOnlyList<Employee> Team => _team.AsReadOnly();
 
         public override void ReportToManager() => Console.WriteLine($"[Manager] {FullName} reports to director");
     }

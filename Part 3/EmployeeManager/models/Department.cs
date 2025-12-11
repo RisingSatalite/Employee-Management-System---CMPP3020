@@ -23,6 +23,6 @@ namespace EmployeeManager.Models
             }
         }
 
-        public List<Employee> Employees => new List<Employee>{ _employees };
+        public IReadOnlyList<Employee> Employees => _employees.AsReadOnly();
     }
 }

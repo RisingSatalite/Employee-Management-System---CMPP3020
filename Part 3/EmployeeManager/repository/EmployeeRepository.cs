@@ -1,8 +1,8 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
-using EmployeeManager.model;
-using EmployeeManager.exceptions;
+using EmployeeManager.Models;
+using EmployeeManager.Exceptions;
 
 namespace EmployeeManager.repository
 {
@@ -17,11 +17,11 @@ namespace EmployeeManager.repository
 
             try
             {
-                var lines = filePath.ReadAllLines(filePath);
+                var lines = File.ReadAllLines(filePath);
 
                 foreach(var line in lines)
                 {
-                    if(string.isNullOrWhiteSpace(line))
+                    if(string.IsNullOrWhiteSpace(line))
                         continue;
                     
                     var parts = line.Split(',');
@@ -74,7 +74,7 @@ namespace EmployeeManager.repository
             }      
         }
 
-        private class AnonymousEmployee : EmployeeManager
+        private class AnonymousEmployee : Employee
         {
             private readonly double loadedPay;
 

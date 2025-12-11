@@ -1,5 +1,5 @@
 using System;
-using EmployeeManager.model;
+using EmployeeManager.Models;
 
 namespace EmployeeManager.util
 {

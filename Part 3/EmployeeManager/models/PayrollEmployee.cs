@@ -6,7 +6,7 @@ namespace EmployeeManager.Models
     {
         public PayrollEmployee(int employeeId, string firstName, string lastName, DateTime startDate, DateTime dateOfBirth, double annualSalary, int vacationDays, string benefits) : base(employeeId, firstName, lastName, startDate, dateOfBirth, annualSalary, vacationDays, benefits) { }
 
-        public void ProcessPayroll (EmployeeManager employee)
+        public void ProcessPayroll (Employee employee)
         {
             Console.WriteLine($"Processing payroll for {employee.FullName} Amount: {employee.GetPay()}");
         } 

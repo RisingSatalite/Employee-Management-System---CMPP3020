@@ -1,9 +1,9 @@
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using EmployeeManager.model;
-using EmployeeManager.repository;
-using EmployeeManager.exceptions;
+using EmployeeManager.Models;
+using EmployeeManager.Repository;
+using EmployeeManager.Exceptions;
 
 namespace EmployeeManager.Tasks
 {
