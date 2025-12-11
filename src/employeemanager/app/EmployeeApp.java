@@ -24,9 +24,9 @@ public class EmployeeApp {
         List<Department> departments = new ArrayList<>();
         List<Position> positions = new ArrayList<>();
 
-        preloadBaseEmployees(employees);
         preloadBaseDepartments(departments);
         preloadBasePositions(positions);
+        preloadBaseEmployees(employees, positions, departments);
 
         boolean running = true;
 
@@ -387,13 +387,14 @@ public class EmployeeApp {
 
     // ===== Preload base employees =====
 
-    private static void preloadBaseEmployees(List<Employee> employees) {
+    private static void preloadBaseEmployees(List<Employee> employees, List<Position> positions, List<Department> department) {
         try {
             FullTimeEmployee alice = new FullTimeEmployee(
                     1001, "Alice", "Smith",
                     LocalDate.of(2022, 1, 10),
                     LocalDate.of(1995, 3, 15),
-                    80000, 15, "Health Insurance, Dental"
+                    80000, 15, "Health Insurance, Dental",
+                    positions.get(2), department.get(2)
             );
             employees.add(alice);
 
@@ -402,7 +403,8 @@ public class EmployeeApp {
                     LocalDate.of(2023, 5, 1),
                     LocalDate.of(2000, 7, 20),
                     25.0, 20,
-                    LocalDate.of(2026, 5, 1)
+                    LocalDate.of(2026, 5, 1),
+                    positions.get(2), department.get(2)
             );
             employees.add(bob);
 
@@ -410,7 +412,8 @@ public class EmployeeApp {
                     1003, "Carol", "Brown",
                     LocalDate.of(2020, 9, 1),
                     LocalDate.of(1990, 1, 5),
-                    95000, 20, "Health Insurance, Dental, Retirement Plan", "IT Manager"
+                    95000, 20, "Health Insurance, Dental, Retirement Plan", 
+                    "IT Manager", positions.get(4), department.get(3)
             );
             employees.add(carol);
 
@@ -418,7 +421,8 @@ public class EmployeeApp {
                     1004, "Dan", "Green",
                     LocalDate.of(2019, 9, 1),
                     LocalDate.of(1988, 10, 10),
-                    90000, 20, "Health Insurance, Dental"
+                    90000, 20, "Health Insurance, Dental",
+                    positions.get(2), department.get(2)
             );
             employees.add(dan);
 
@@ -426,7 +430,8 @@ public class EmployeeApp {
                     1005, "Eve", "White",
                     LocalDate.of(2021, 3, 1),
                     LocalDate.of(1992, 11, 11),
-                    85000, 15, "Health Insurance, Dental"
+                    85000, 15, "Health Insurance, Dental",
+                    positions.get(1), department.get(1)
             );
             employees.add(eve);
 
@@ -457,10 +462,12 @@ public class EmployeeApp {
     	Position position2 = new Position(2,"IT Staff");
     	Position position3 = new Position(3,"Teacher");
     	Position position4 = new Position(4,"Administrator");
+    	Position position5 = new Position(5,"Manager");
     	positions.add(position1);
     	positions.add(position2);
     	positions.add(position3);
     	positions.add(position4);
+    	positions.add(position5);
     }
     
     private static void viewEmployeeManagerAssignments(List<Employee> employees) {
