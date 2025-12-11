@@ -8,6 +8,27 @@ public class PartTimeEmployee extends Employee {
     private double hourlyRate;
     private int maxHoursPerWeek;
     private LocalDate contractEndDate;
+    
+    public PartTimeEmployee(int employeeId,
+            String firstName,
+            String lastName,
+            LocalDate startDate,
+            LocalDate dateOfBirth,
+            double hourlyRate,
+            int maxHoursPerWeek,
+            Position position,
+            Department department,
+            LocalDate contractEndDate) throws InvalidDataException {
+    	super(employeeId, firstName, lastName, startDate, dateOfBirth, position, department);
+
+    	if (hourlyRate < 0) {
+    		throw new InvalidDataException("Hourly rate cannot be negative.");
+    	}
+
+    	this.hourlyRate = hourlyRate;
+    	this.maxHoursPerWeek = maxHoursPerWeek;
+    	this.contractEndDate = contractEndDate;
+    }
 
     public PartTimeEmployee(int employeeId,
                             String firstName,
@@ -37,5 +58,16 @@ public class PartTimeEmployee extends Employee {
     public void reportToManager() {
         System.out.println("[PartTime] " + getFullName() + " reporting to manager.");
         super.reportToManager();
+    }
+    
+    public String employeeData() {
+    	return (
+    			this.getEmployeeId() + 
+    			"," + this.getFullName() + 
+    			"," + this.getPosition() +
+        		"," + this.getDepartment() +
+        		"," + this.getDateOfBirth() +
+        		"," + this.getStartDate()
+        		);
     }
 }
