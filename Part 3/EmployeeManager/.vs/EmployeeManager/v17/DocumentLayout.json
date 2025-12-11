@@ -3,16 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\Fire\\Desktop\\Employee-Management-System---CMPP3020\\Part 3\\EmployeeManager\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Fire\\Desktop\\Employee-Management-System---CMPP3020\\Part 3\\EmployeeManager\\Program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Fire\\Desktop\\Employee-Management-System---CMPP3020\\Part 3\\EmployeeManager\\models\\PartTimeEmployee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:models\\PartTimeEmployee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Fire\\Desktop\\Employee-Management-System---CMPP3020\\Part 3\\EmployeeManager\\models\\FullTimeEmployee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:models\\FullTimeEmployee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Fire\\Desktop\\Employee-Management-System---CMPP3020\\Part 3\\EmployeeManager\\utils\\EmployeePrinter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:utils\\EmployeePrinter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Fire\\Desktop\\Employee-Management-System---CMPP3020\\Part 3\\EmployeeManager\\Program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Fire\\Desktop\\Employee-Management-System---CMPP3020\\Part 3\\EmployeeManager\\exceptions\\InvalidDataException.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -29,10 +33,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Fire\\Desktop\\Employee-Management-System---CMPP3020\\Part 3\\EmployeeManager\\models\\Position.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:models\\Position.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Fire\\Desktop\\Employee-Management-System---CMPP3020\\Part 3\\EmployeeManager\\models\\PartTimeEmployee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:models\\PartTimeEmployee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Fire\\Desktop\\Employee-Management-System---CMPP3020\\Part 3\\EmployeeManager\\models\\Manager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -78,7 +78,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 9,
+          "SelectedChildIndex": 6,
           "Children": [
             {
               "$type": "Document",
@@ -90,8 +90,7 @@
               "RelativeToolTip": "models\\Manager.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-11T02:48:02.392Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-11T02:48:02.392Z"
             },
             {
               "$type": "Document",
@@ -103,12 +102,11 @@
               "RelativeToolTip": "models\\Instructor.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-11T02:53:55.6Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-11T02:53:55.6Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "AppException.cs",
               "DocumentMoniker": "C:\\Users\\Fire\\Desktop\\Employee-Management-System---CMPP3020\\Part 3\\EmployeeManager\\exceptions\\AppException.cs",
               "RelativeDocumentMoniker": "exceptions\\AppException.cs",
@@ -116,12 +114,11 @@
               "RelativeToolTip": "exceptions\\AppException.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-11T02:46:38.44Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-11T02:46:38.44Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "CalculationException.cs",
               "DocumentMoniker": "C:\\Users\\Fire\\Desktop\\Employee-Management-System---CMPP3020\\Part 3\\EmployeeManager\\exceptions\\CalculationException.cs",
               "RelativeDocumentMoniker": "exceptions\\CalculationException.cs",
@@ -129,8 +126,7 @@
               "RelativeToolTip": "exceptions\\CalculationException.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-11T06:48:08.145Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-11T06:48:08.145Z"
             },
             {
               "$type": "Document",
@@ -142,12 +138,11 @@
               "RelativeToolTip": "exceptions\\FileStorageException.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAABEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-11T06:48:36.173Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-11T06:48:36.173Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "InvalidDataException.cs",
               "DocumentMoniker": "C:\\Users\\Fire\\Desktop\\Employee-Management-System---CMPP3020\\Part 3\\EmployeeManager\\exceptions\\InvalidDataException.cs",
               "RelativeDocumentMoniker": "exceptions\\InvalidDataException.cs",
@@ -155,18 +150,17 @@
               "RelativeToolTip": "exceptions\\InvalidDataException.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-11T06:48:47.967Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-11T06:48:47.967Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\Fire\\Desktop\\Employee-Management-System---CMPP3020\\Part 3\\EmployeeManager\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
               "ToolTip": "C:\\Users\\Fire\\Desktop\\Employee-Management-System---CMPP3020\\Part 3\\EmployeeManager\\Program.cs",
               "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAP4AAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAH4AAAAAAAAAAAAAAJoAAAAyAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-12-11T02:46:35.033Z",
               "EditorCaption": ""
@@ -181,8 +175,7 @@
               "RelativeToolTip": "tasks\\FileTask.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAADIAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-11T06:49:19.1Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-11T06:49:19.1Z"
             },
             {
               "$type": "Document",
@@ -194,12 +187,11 @@
               "RelativeToolTip": "models\\Department.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-11T06:50:35.817Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-11T06:50:35.817Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "FullTimeEmployee.cs",
               "DocumentMoniker": "C:\\Users\\Fire\\Desktop\\Employee-Management-System---CMPP3020\\Part 3\\EmployeeManager\\models\\FullTimeEmployee.cs",
               "RelativeDocumentMoniker": "models\\FullTimeEmployee.cs",
@@ -212,13 +204,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 1,
               "Title": "PartTimeEmployee.cs",
               "DocumentMoniker": "C:\\Users\\Fire\\Desktop\\Employee-Management-System---CMPP3020\\Part 3\\EmployeeManager\\models\\PartTimeEmployee.cs",
               "RelativeDocumentMoniker": "models\\PartTimeEmployee.cs",
               "ToolTip": "C:\\Users\\Fire\\Desktop\\Employee-Management-System---CMPP3020\\Part 3\\EmployeeManager\\models\\PartTimeEmployee.cs",
               "RelativeToolTip": "models\\PartTimeEmployee.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAPYAAABQAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAiwBkAAAAkAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-12-11T06:50:40.187Z",
               "EditorCaption": ""
@@ -233,12 +225,11 @@
               "RelativeToolTip": "EmployeeManager.csproj",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-12-11T06:35:21.17Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-11T06:35:21.17Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
               "Title": "Position.cs",
               "DocumentMoniker": "C:\\Users\\Fire\\Desktop\\Employee-Management-System---CMPP3020\\Part 3\\EmployeeManager\\models\\Position.cs",
               "RelativeDocumentMoniker": "models\\Position.cs",
@@ -246,12 +237,11 @@
               "RelativeToolTip": "models\\Position.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-11T03:05:44.63Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-11T03:05:44.63Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "EmployeePrinter.cs",
               "DocumentMoniker": "C:\\Users\\Fire\\Desktop\\Employee-Management-System---CMPP3020\\Part 3\\EmployeeManager\\utils\\EmployeePrinter.cs",
               "RelativeDocumentMoniker": "utils\\EmployeePrinter.cs",
@@ -259,8 +249,7 @@
               "RelativeToolTip": "utils\\EmployeePrinter.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-11T02:46:45.021Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-11T02:46:45.021Z"
             },
             {
               "$type": "Document",
@@ -272,8 +261,7 @@
               "RelativeToolTip": "repository\\EmployeeRepository.cs",
               "ViewState": "AgIAAAYAAAAAAAAAAAAAABIAAAAxAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-11T03:06:11.781Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-11T03:06:11.781Z"
             },
             {
               "$type": "Document",
@@ -285,8 +273,7 @@
               "RelativeToolTip": "models\\Employee.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAzAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-11T06:50:35.146Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-11T06:50:35.146Z"
             },
             {
               "$type": "Document",
@@ -298,8 +285,7 @@
               "RelativeToolTip": "models\\PayrollEmployee.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-11T02:53:56.544Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-11T02:53:56.544Z"
             }
           ]
         }

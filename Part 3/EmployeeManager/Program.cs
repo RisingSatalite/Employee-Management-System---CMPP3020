@@ -7,7 +7,7 @@ using EmployeeManager.util;
 using EmployeeManager.Repository;
 using EmployeeManager.Tasks;
 
-namespace EmployeeManager
+namespace EmployeeManager.App
 {
     internal class Program
     {
