@@ -36,7 +36,7 @@ public class EmployeeApp {
 
             try {
                 switch (choice) {
-                    case "1" -> addEmployeeMenu(scanner, employees);
+                    case "1" -> addEmployeeMenu(scanner, employees, positions, departments);
                     case "2" -> viewEmployees(employees);
                     case "3" -> deleteEmployeeMenu(scanner, employees);
                     case "4" -> saveEmployeesToFile(repository, employees);
@@ -138,7 +138,7 @@ public class EmployeeApp {
 
     // ===== Adding employees =====
 
-    private static void addEmployeeMenu(Scanner scanner, List<Employee> employees)
+    private static void addEmployeeMenu(Scanner scanner, List<Employee> employees, List<Position> positions, List<Department> departments)
             throws InvalidDataException {
 
         System.out.println("\nAdd Employee");
@@ -159,6 +159,29 @@ public class EmployeeApp {
         // Dummy dates for prototype
         LocalDate startDate = LocalDate.now();
         LocalDate dob = LocalDate.of(2000, 1, 1);
+        
+        
+        System.out.print("Position");
+        for (int i = 0; i < positions.size(); i++) {
+            System.out.println("Enter " + i + " for " + positions.get(i).getTitle());
+        }
+        System.out.print("Enter the number to select, 0 for no position at this time");
+        int number = Integer.parseInt(scanner.nextLine().trim());
+        Position selectedPosition = null;
+        if (number >= 1 && number <= positions.size()) {
+        	selectedPosition = positions.get(number-1);
+        }
+
+        System.out.print("Department");
+        for (int i = 0; i < departments.size(); i++) {
+            System.out.println("Enter " + i + " for " + departments.get(i).getName());
+        }
+        System.out.print("Enter the number to select, 0 for no position at this time");
+        number = Integer.parseInt(scanner.nextLine().trim());
+        Department selectedDepartment = null;
+        if (number >= 1 && number <= positions.size()) {
+        	selectedDepartment = departments.get(number-1);
+        }
 
         Employee newEmployee = null;
 
@@ -184,21 +207,21 @@ public class EmployeeApp {
             case "2":
                 newEmployee = new Manager(
                         id, first, last, startDate, dob,
-                        salary, vacation, benefits, "Manager"
+                        salary, vacation, benefits, "Manager", selectedPosition, selectedDepartment
                 );
                 break;
 
             case "3":
                 newEmployee = new Instructor(
                         id, first, last, startDate, dob,
-                        salary, vacation, benefits
+                        salary, vacation, benefits, selectedPosition, selectedDepartment
                 );
                 break;
 
             case "4":
                 newEmployee = new PayrollEmployee(
                         id, first, last, startDate, dob,
-                        salary, vacation, benefits
+                        salary, vacation, benefits, selectedPosition, selectedDepartment
                 );
                 break;
 
@@ -206,7 +229,7 @@ public class EmployeeApp {
             default:
                 newEmployee = new FullTimeEmployee(
                         id, first, last, startDate, dob,
-                        salary, vacation, benefits
+                        salary, vacation, benefits, selectedPosition, selectedDepartment
                 );
                 break;
         }
@@ -230,7 +253,7 @@ public class EmployeeApp {
 
             PartTimeEmployee parttime = new PartTimeEmployee(
                     id, first, last, startDate, dob,
-                    hourly, hours, contractEnd
+                    hourly, hours, contractEnd, selectedPosition, selectedDepartment
             );
 
             System.out.print("Is this part-time employee an Instructor? (y/n): ");
