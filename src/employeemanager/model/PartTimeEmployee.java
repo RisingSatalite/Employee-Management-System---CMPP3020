@@ -9,16 +9,17 @@ public class PartTimeEmployee extends Employee {
     private int maxHoursPerWeek;
     private LocalDate contractEndDate;
     
-    public PartTimeEmployee(int employeeId,
+    public PartTimeEmployee(
+    		int employeeId,
             String firstName,
             String lastName,
             LocalDate startDate,
             LocalDate dateOfBirth,
             double hourlyRate,
             int maxHoursPerWeek,
+            LocalDate contractEndDate,
             Position position,
-            Department department,
-            LocalDate contractEndDate) throws InvalidDataException {
+            Department department) throws InvalidDataException {
     	super(employeeId, firstName, lastName, startDate, dateOfBirth, position, department);
 
     	if (hourlyRate < 0) {
