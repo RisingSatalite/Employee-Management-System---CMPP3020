@@ -1,4 +1,6 @@
 using System;
+using InvalidDataException = EmployeeManager.Exceptions.InvalidDataException;
+
 
 namespace EmployeeManager.Models
 {
@@ -7,17 +9,22 @@ namespace EmployeeManager.Models
         public int EmployeeId { get; private set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
-        public DateTime StartDate { get; private set;}
-        public DateTime DateOfBirth { get; private set;}
+        public DateTime StartDate { get; private set; }
+        public DateTime DateOfBirth { get; private set; }
 
-        public Department Department { get; set; }
-        public Position Position { get; set; }
-        public Manager Manager{ get; set; }
+        public Department? Department { get; set; }
+        public Position? Position { get; set; }
+        public Manager? Manager { get; set; }
 
-        protected Employee(int employeeId, string firstName, string lastName, DateTime startDate, DateTime dateOfBirth)
+        public string FullName => $"{FirstName} {LastName}";
+
+        protected Employee(int employeeId, string firstName, string lastName,
+                           DateTime startDate, DateTime dateOfBirth)
         {
-            if (employeeId <= 0) throw new Exceptions.InvalidDataException("Employee ID must be positive.");
-            if (string.IsNullOrEmpty(firstName)) throw new Exceptions.InvalidDataException("First name is required");
+            if (employeeId <= 0)
+                throw new InvalidDataException("Employee ID must be positive.");
+            if (string.IsNullOrWhiteSpace(firstName))
+                throw new InvalidDataException("First name is required.");
 
             EmployeeId = employeeId;
             FirstName = firstName;
@@ -25,8 +32,6 @@ namespace EmployeeManager.Models
             StartDate = startDate;
             DateOfBirth = dateOfBirth;
         }
-    
-        public string FullName => $"{FirstName} {LastName}";
 
         public abstract double GetPay();
 
@@ -40,7 +45,9 @@ namespace EmployeeManager.Models
 
         public override string ToString()
         {
-            return $"Employee{{id={EmployeeId}, name='{FullName}', position={(Position?.Title ?? "None")}, department={(Department?.Name ?? "None")}}}";
+            var positionTitle = Position?.Title ?? "None";
+            var deptName = Department?.Name ?? "None";
+            return $"Employee{{id={EmployeeId}, name='{FullName}', position={positionTitle}, department={deptName}}}";
         }
     }
 }

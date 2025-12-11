@@ -1,16 +1,19 @@
 using System;
 using System.Collections.Generic;
-using System.IO;
+using System.Threading.Tasks;
 using EmployeeManager.Models;
+using EmployeeManager.util;
 using EmployeeManager.Exceptions;
+using EmployeeManager.Repository;   
+using EmployeeManager.Tasks;
 
-namespace EmployeeManager.repository
+namespace EmployeeManager.Repository
 {
     public class EmployeeRepository
     {
         public List<Employee> LoadEmployees(string filePath)
         {
-            if(!File.Exists(filePath))
+            if (!File.Exists(filePath))
                 throw new FileStorageException($"File does not exist: {filePath}");
 
             var employees = new List<Employee>();
@@ -19,14 +22,15 @@ namespace EmployeeManager.repository
             {
                 var lines = File.ReadAllLines(filePath);
 
-                foreach(var line in lines)
+                foreach (var line in lines)
                 {
-                    if(string.IsNullOrWhiteSpace(line))
+                    if (string.IsNullOrWhiteSpace(line))
                         continue;
-                    
+
                     var parts = line.Split(',');
 
-                    if (parts.Length < 3){
+                    if (parts.Length < 3)
+                    {
                         Console.Error.WriteLine($"Skipping malformed line: {line}");
                         continue;
                     }
@@ -59,7 +63,9 @@ namespace EmployeeManager.repository
 
             foreach (var employee in employees)
             {
-                lines.add($"{employee.EmployeeId}, {employee.FullName}, {employee.Position}, {employee.Department}, {employee.Pay()}");
+                lines.Add(
+                    $"{employee.EmployeeId}, {employee.FullName}, {employee.Position?.Title}, {employee.Department?.Name}, {employee.GetPay()}"
+                );
             }
 
             try
@@ -67,23 +73,23 @@ namespace EmployeeManager.repository
                 File.WriteAllLines(filePath, lines);
                 Console.WriteLine($"Saved {employees.Count} employees to {filePath}");
             }
-
             catch (IOException ex)
             {
                 throw new FileStorageException($"Error writing file {filePath}", ex);
-            }      
+            }
         }
 
         private class AnonymousEmployee : Employee
         {
             private readonly double loadedPay;
 
-            public AnonymousEmployee(int employeeId, string firstName, string lastName, double loadedPay) : base(employeeId, firstName, lastName, DateTime.Now, new DateTime(2000, 1, 1))
+            public AnonymousEmployee(int employeeId, string firstName, string lastName, double loadedPay)
+                : base(employeeId, firstName, lastName, DateTime.Now, new DateTime(2000, 1, 1))
             {
                 this.loadedPay = loadedPay;
             }
 
-            public override double Pay() => loadedPay;
+            public override double GetPay() => loadedPay;
         }
     }
 }

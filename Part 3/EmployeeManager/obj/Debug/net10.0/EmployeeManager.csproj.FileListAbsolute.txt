@@ -1,0 +1,15 @@
+C:\Users\Fire\Desktop\Employee-Management-System---CMPP3020\Part 3\EmployeeManager\obj\Debug\net10.0\EmployeeManager.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Fire\Desktop\Employee-Management-System---CMPP3020\Part 3\EmployeeManager\obj\Debug\net10.0\EmployeeManager.AssemblyInfoInputs.cache
+C:\Users\Fire\Desktop\Employee-Management-System---CMPP3020\Part 3\EmployeeManager\obj\Debug\net10.0\EmployeeManager.AssemblyInfo.cs
+C:\Users\Fire\Desktop\Employee-Management-System---CMPP3020\Part 3\EmployeeManager\obj\Debug\net10.0\EmployeeManager.csproj.CoreCompileInputs.cache
+C:\Users\Fire\Desktop\Employee-Management-System---CMPP3020\Part 3\EmployeeManager\obj\Debug\net10.0\EmployeeManager.sourcelink.json
+C:\Users\Fire\Desktop\Employee-Management-System---CMPP3020\Part 3\EmployeeManager\bin\Debug\net10.0\EmployeeManager.exe
+C:\Users\Fire\Desktop\Employee-Management-System---CMPP3020\Part 3\EmployeeManager\bin\Debug\net10.0\EmployeeManager.deps.json
+C:\Users\Fire\Desktop\Employee-Management-System---CMPP3020\Part 3\EmployeeManager\bin\Debug\net10.0\EmployeeManager.runtimeconfig.json
+C:\Users\Fire\Desktop\Employee-Management-System---CMPP3020\Part 3\EmployeeManager\bin\Debug\net10.0\EmployeeManager.dll
+C:\Users\Fire\Desktop\Employee-Management-System---CMPP3020\Part 3\EmployeeManager\bin\Debug\net10.0\EmployeeManager.pdb
+C:\Users\Fire\Desktop\Employee-Management-System---CMPP3020\Part 3\EmployeeManager\obj\Debug\net10.0\EmployeeManager.dll
+C:\Users\Fire\Desktop\Employee-Management-System---CMPP3020\Part 3\EmployeeManager\obj\Debug\net10.0\refint\EmployeeManager.dll
+C:\Users\Fire\Desktop\Employee-Management-System---CMPP3020\Part 3\EmployeeManager\obj\Debug\net10.0\EmployeeManager.pdb
+C:\Users\Fire\Desktop\Employee-Management-System---CMPP3020\Part 3\EmployeeManager\obj\Debug\net10.0\EmployeeManager.genruntimeconfig.cache
+C:\Users\Fire\Desktop\Employee-Management-System---CMPP3020\Part 3\EmployeeManager\obj\Debug\net10.0\ref\EmployeeManager.dll

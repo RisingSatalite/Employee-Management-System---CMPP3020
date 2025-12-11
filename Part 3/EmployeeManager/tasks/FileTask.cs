@@ -16,22 +16,31 @@ namespace EmployeeManager.Tasks
         private readonly List<Employee> employees;
         private readonly EmployeeRepository repository;
 
+        public FileTask(string filePath, Mode mode, List<Employee> employees, EmployeeRepository repository)
+        {
+            this.filePath = filePath;
+            this.mode = mode;
+            this.employees = employees;
+            this.repository = repository;
+        }
 
-    public async Task RunAsync()
+        public async Task RunAsync()
         {
             try
             {
                 switch (mode)
                 {
                     case Mode.READ:
-                        repository.LoadEmployees(filePath);
+                        var loaded = repository.LoadEmployees(filePath);
+                        employees.Clear();
+                        employees.AddRange(loaded);
                         break;
+
                     case Mode.WRITE:
                         repository.SaveEmployees(filePath, employees);
                         break;
                 }
             }
-
             catch (AppException ex)
             {
                 Console.Error.WriteLine($"FileTask Error ({mode}): {ex.Message}");
