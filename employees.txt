@@ -1,5 +1,5 @@
-1001,Alice Smith,null,null,6666.666666666667
-1002,Bob Jones,null,null,500.0
-1003,Carol Brown,null,null,7916.666666666667
-1004,Dan Green,null,null,7500.0
-1005,Eve White,null,null,7083.333333333333
+1001,Alice Smith,Teacher,Staff,6666.666666666667
+1002,Bob Jones,Teacher,Staff,500.0
+1003,Carol Brown,Manager,Administration,7916.666666666667
+1004,Dan Green,Teacher,Staff,7500.0
+1005,Eve White,IT Staff,IT,7083.333333333333
