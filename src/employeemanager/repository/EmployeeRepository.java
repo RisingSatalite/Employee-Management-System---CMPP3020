@@ -1,6 +1,8 @@
 package employeemanager.repository;
 
+import employeemanager.model.Department;
 import employeemanager.model.Employee;
+import employeemanager.model.Position;
 import employeemanager.exceptions.*;
 
 import java.io.IOException;
@@ -52,7 +54,9 @@ public class EmployeeRepository {
                         first,
                         last,
                         LocalDate.now(),              
-                        LocalDate.of(2000, 1, 1)      
+                        LocalDate.of(2000, 1, 1),
+                        new Position(0, parts[2]),
+                        new Department(0, parts[3])
                 ) {
                     private final double loadedPay = pay;
 
