@@ -26,6 +26,7 @@ public class EmployeeRepository {
         }
 
         List<Employee> employees = new ArrayList<>();
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
 
         try {
             List<String> lines = Files.readAllLines(path);
@@ -55,8 +56,8 @@ public class EmployeeRepository {
                         id,
                         first,
                         last,
-                        LocalDate.now(),              
-                        LocalDate.of(2000, 1, 1),
+                        LocalDate.parse(parts[5], formatter),
+                        LocalDate.parse(parts[6], formatter),
                         new Position(0, parts[2]),
                         new Department(0, parts[3])
                 ) {
@@ -96,7 +97,9 @@ public class EmployeeRepository {
             		"," + employee.getFullName() + 
             		"," + employee.getPositionName() +
             		"," + employee.getDepartmentName() +
-            		"," + employee.getPay());
+            		"," + employee.getPay() +
+            		"," + employee.getStartDate().format(formatter) +
+            		"," + employee.getDateOfBirth().format(formatter));
         }
 
         try {
