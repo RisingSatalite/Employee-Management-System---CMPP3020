@@ -5,6 +5,8 @@ import employeemanager.model.Employee;
 import employeemanager.model.Position;
 import employeemanager.exceptions.*;
 
+import java.time.format.DateTimeFormatter;
+
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -84,6 +86,7 @@ public class EmployeeRepository {
 
         Path path = Path.of(filePath);
         List<String> lines = new ArrayList<>();
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
 
         for (Employee employee : employees) {
         	
